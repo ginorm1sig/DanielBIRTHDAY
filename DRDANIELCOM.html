@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="День рождения Даниэля — праздничная страница для настоящего легендарного друга.">
+  <title>С днём рождения, Даниэл!</title>
+  <link rel="stylesheet" href="DRDANIELCSS.css">
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="hero">
+    <nav class="topbar">
+      <a class="logo" href="#top">DANIEL<span>++</span></a>
+      <a class="nav-link" href="#message">Поздравление</a>
+    </nav>
+
+    <main id="top" class="hero-content">
+      <div class="eyebrow">03.10 • главный герой дня</div>
+      <h1>С ДНЁМ<br><span>РОЖДЕНИЯ,</span><br>ДАНИЭЛ!</h1>
+      <p class="hero-subtitle">
+        Сегодня интернет официально принадлежит человеку,
+        который может одновременно учиться в Алабуге, кушать чак-чак
+        и всё равно оставаться отличным другом.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#message">Открыть поздравление</a>
+        <button class="btn btn-ghost" id="surpriseBtn" type="button">Нажать ради прикола</button>
+      </div>
+
+      <div id="surprise" class="surprise" hidden></div>
+    </main>
+  </header>
+
+  <section id="message" class="section">
+    <div class="section-label">01 / официальный текст</div>
+    <div class="message-card">
+      <p class="big-quote">«Брат, этот сайт сделан исключительно потому, что обычной открытки для тебя было бы слишком мало.»</p>
+      <div class="divider"></div>
+      <p>
+        Даниэл, с днём рождения! Желаю тебе здоровья, денег, удачи,
+        нормального сна и чтобы дедлайн никогда не появлялся за пять минут до сдачи.
+      </p>
+      <p>
+        Ты человек, с которым всегда можно посмеяться, обсудить какую-нибудь ерунду
+        и внезапно устроить философский диспут о том, почему <strong>чак-чак — это не просто десерт,
+        а стратегический запас счастья</strong>. Эч-почмак тоже уважительно заносим в список
+        жизненных ценностей. (Написано чатом джпт)
+      </p>
+      <p>
+        Отдельный респект за <strong>Алабугу Политех</strong>.
+        Кто-то выбирает лёгкие пути, а ты выбрал путь долбаеба и решил пойти туда, так часто бывает
+      </p>
+      <p>
+        А ещё желаю тебе счастья в личной жизни.
+        Удачи с альтушкой там, больше на китай городе не побухаем.
+      </p>
+      <p>
+        И без шуток: <strong>я реально ценю нашу дружбу.</strong>
+        Спасибо тебе за общение, за поддержку, за все наши приколы и за моменты,
+        которые потом вспоминаешь и думаешь: «Ну и зачем мы это вообще сделали?»
+      </p>
+      <p class="final-line">Пусть у тебя всё будет хорошо. Серьёзно. Ты хороший друг — не теряйся.</p>
+    </div>
+  </section>
+
+  <section class="section dark-section">
+    <div class="section-label">02 / факты, которые нельзя опровергнуть</div>
+    <div class="cards">
+      <article class="fact-card">
+        <span>01</span>
+        <h2>Чак-чак</h2>
+        <p>Еда, которая способна решить 73% жизненных проблем. Остальные 27% решаются скаканием на лошади и грабежем деревни.</p>
+      </article>
+      <article class="fact-card">
+        <span>02</span>
+        <h2>Алабуга</h2>
+        <p>Место, где ты учишься, и подтверждение твоего интелекта</p>
+      </article>
+      <article class="fact-card">
+        <span>03</span>
+        <h2>Дружба</h2>
+        <p>Самый важный пункт. Все остальные приколы — просто приложение к тому, что ты хороший друг.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">03 / ответ сервера</div>
+    <div class="api-card">
+      <div>
+        <h2>Backend online</h2>
+        <p>Эта страница действительно связана с Node.js-бэкендом.</p>
+      </div>
+      <button class="btn btn-primary" id="apiBtn" type="button">Проверить поздравление</button>
+      <pre id="apiResult" aria-live="polite">Нажми кнопку — фронтенд отправит запрос на /api/birthday.</pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-mark">D<span>+</span></div>
+    <div>
+      <p class="footer-title">С днем рождения тебя, Даниэл!</p>
+      <p class="footer-note">Сделано с уважением, подколами и без лишнего пафоса.</p>
+    </div>
+  </footer>
+
+  <script>
+    const surpriseBtn = document.getElementById('surpriseBtn');
+    const surprise = document.getElementById('surprise');
+    const apiBtn = document.getElementById('apiBtn');
+    const apiResult = document.getElementById('apiResult');
+
+    const jokes = [
+      'Срочное уведомление: именинник найден. Разрешено поздравлять, кормить чак-чаком и не спрашивать про дедлайны.',
+      'Система определила: уровень легендарности Даниэля сегодня +100%. Алабуга Политех ещё не успел подготовиться.',
+      'Диагноз сервера: именинник слишком хорош, чтобы отдавать его обратно в обычные будни. Попробуй завтра.',
+      'Чак-чак загружен. Эч-почмак загружен. Праздник запущен.'
+    ];
+
+    surpriseBtn.addEventListener('click', () => {
+      surprise.hidden = false;
+      surprise.textContent = jokes[Math.floor(Math.random() * jokes.length)];
+      surprise.classList.remove('pop');
+      requestAnimationFrame(() => surprise.classList.add('pop'));
+    });
+
+    apiBtn.addEventListener('click', async () => {
+      apiBtn.disabled = true;
+      apiBtn.textContent = 'Проверяем...';
+      apiResult.textContent = 'Запрос ушёл на сервер...';
+
+      try {
+        const response = await fetch('/api/birthday');
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        const data = await response.json();
+        apiResult.textContent = `${data.message}\n\n${data.signature}`;
+      } catch (error) {
+        apiResult.textContent = 'Не удалось получить ответ от backend: ' + error.message;
+      } finally {
+        apiBtn.disabled = false;
+        apiBtn.textContent = 'Проверить поздравление';
+      }
+    });
+  </script>
+</body>
+</html>
